@@ -54,3 +54,50 @@ type Pessoa = (Nome, Idade, Linguagem)
 
 pessoa :: Pessoa
 pessoa = ("Luigi", 21, "haskell")
+
+-- FUNÇÃO QUE RECEBE DUAS LISTAS DE INTEIRO E VERIFICA SE AS LISTAS
+--TEEM O MESMO NUMERO DE ELEMENTOS, OS MESMOS ELEMENTOS E SE OS ELEMENTOS
+--ESTÃO NA MESMA POSIÇÃO
+
+comparaLista :: [Int] -> [Int] -> Bool
+comparaLista [] [] = True
+comparaLista [] _ = False
+comparaLista _ [] = False
+comparaLista (a:b) (c:d) | (a == c) = comparaLista b d
+                         | otherwise = False
+
+
+--Função que recebe lista e retorna o inverso da mesma utilizaremos o
+-- [t] para generalizar o tipo recebido
+
+
+inverteLista :: [t] -> [t]
+inverteLista [] = []
+inverteLista (x:xs) = inverteLista xs ++ [x]
+
+
+--Verificar se um elemento pertence a uma lista
+
+pertence :: [Int] -> Int -> Bool
+pertence [] _ = False
+pertence (x:xs) n | (x == n) = True
+                  | otherwise = pertence xs n
+
+
+
+-- Verificar o maior elemento da lista
+
+maior :: [Int] -> Int
+maior [x] = x
+maior (x:xs) | (x > maior xs) = x
+             | otherwise = maior xs
+
+-- Função para receber uma lista e verificar se todos os elementos
+-- são pares
+
+todosPares :: [Int] -> Bool
+todosPares [] = True
+todosPares (x:xs) | (mod x 2 == 0) = False
+                  | otherwise = todosPares xs
+
+
