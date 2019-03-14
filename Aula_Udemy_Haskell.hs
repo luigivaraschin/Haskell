@@ -22,9 +22,9 @@ fib 1 = 1
 fib n = fib(n-1) + fib(n-2)
 
 --UTILIZANDO GUARDA(CONDIÇÃO LÓGICA A SER VERDADEIRA) o | indica a GUARDA
-Guarda x | (x == 0) = 0
-		  | (x == 1) = 1
-		  | otherwise = 10
+guarda x | (x == 0) = 0
+         | (x == 1) = 1
+         | otherwise = 10
 
 -- VARIÁVEL ANÔNIMA indicada pelo  _
 
